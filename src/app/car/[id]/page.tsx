@@ -224,16 +224,18 @@ const Cars = [
     location: "Airport, Karachi",
     description: "Elegant hybrid crossover with stylish design and excellent fuel efficiency.",
   },
-  // ⚠️ Add other car objects similarly...
+  // ... باقی کارز کا ڈیٹا
 ];
 
 // 🔽 Car detail page component
-export default function CarDetailPage({
+export default async function CarDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const car = Cars.find((car) => car.id === params.id);
+  const { id } = await params;
+
+  const car = Cars.find((car) => car.id === id);
 
   if (!car) return notFound();
 

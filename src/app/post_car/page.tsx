@@ -1,7 +1,9 @@
 "use client";
 import { useState, ChangeEvent, FormEvent } from "react";
+import Image from "next/image";
 
 const PostCarPage = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [image, setImage] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
 
@@ -40,7 +42,9 @@ const PostCarPage = () => {
       >
         {/* Car Model */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Car Model</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Car Model
+          </label>
           <input
             type="text"
             placeholder="e.g., Toyota Corolla"
@@ -51,7 +55,9 @@ const PostCarPage = () => {
 
         {/* Year */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Year</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Year
+          </label>
           <input
             type="text"
             placeholder="e.g., 2021"
@@ -62,7 +68,9 @@ const PostCarPage = () => {
 
         {/* Price */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Price</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Price
+          </label>
           <input
             type="text"
             placeholder="e.g., $18,000"
@@ -73,7 +81,9 @@ const PostCarPage = () => {
 
         {/* Mileage */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Mileage</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Mileage
+          </label>
           <input
             type="text"
             placeholder="e.g., 35,000 km"
@@ -84,7 +94,9 @@ const PostCarPage = () => {
 
         {/* Upload Image */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Upload Car Image</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Upload Car Image
+          </label>
           <input
             type="file"
             accept="image/*"
@@ -97,11 +109,12 @@ const PostCarPage = () => {
         {preview && (
           <div className="mt-4">
             <p className="text-sm text-gray-600 mb-2">Image Preview:</p>
-            <div className="relative">
-              <img
+            <div className="relative w-full h-64">
+              <Image
                 src={preview}
                 alt="Preview"
-                className="w-full max-h-64 object-contain rounded shadow"
+                fill
+                className="object-contain rounded shadow"
               />
               <button
                 type="button"
@@ -116,7 +129,9 @@ const PostCarPage = () => {
 
         {/* Additional Details */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Additional Details</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Additional Details
+          </label>
           <textarea
             placeholder="Write something about the car..."
             className="w-full border border-gray-300 rounded-md px-4 py-2 h-24 resize-none focus:ring-2 focus:ring-blue-500 outline-none"
